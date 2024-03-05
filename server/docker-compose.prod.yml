@@ -4,12 +4,12 @@ services:
     build:
       context: .
       target: production
+    env_file:
+      - .env
     ports:
       - 4000:5000
   db:
     container_name: solar-ts-postgres
     image: "postgres"
-    env_file:
-      - .env
     ports:
       - 4444:5432
